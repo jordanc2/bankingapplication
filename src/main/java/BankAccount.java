@@ -31,7 +31,7 @@ public class BankAccount {
 
     public void getPreviousTransaction() {
         if (previousTransaction > 0) {
-            System.out.println("Desposited: " + previousTransaction);
+            System.out.println("Deposited: " + previousTransaction);
         } else if (previousTransaction < 0) {
             System.out.println("Withdrew: " + Math.abs(previousTransaction));
         }
@@ -39,7 +39,7 @@ public class BankAccount {
     }
 
     public void showMenu() {
-        char option = '\0';
+        char option = '\u0000';
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
 
         System.out.println("Welcome " + customerName);
@@ -87,6 +87,9 @@ public class BankAccount {
                     getPreviousTransaction();
                     System.out.println("----------------------------------");
                     System.out.println("\n");
+                    break;
+                case 'E':
+                    System.out.println("**********************************");
                     break;
                 default:
                     System.out.println("Invalid Option! Please try again");
